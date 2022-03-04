@@ -7,6 +7,7 @@ import {
   fadeAnimation,
   photoAnimation,
 } from "../global/animations";
+import Wave from "./Wave";
 
 const AboutSection: React.FC = () => {
   return (
@@ -38,6 +39,7 @@ const AboutSection: React.FC = () => {
           alt="man holding a camera"
         />
       </Image>
+    <Wave />
     </About>
   );
 };
