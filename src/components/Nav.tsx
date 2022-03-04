@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const StyledNav = styled.nav`
   min-height: 10vh;
@@ -26,27 +27,26 @@ const StyledNav = styled.nav`
   }
 `;
 
-const Logo = styled.a`
+const Logo = styled(Link)`
   font-size: 4.5rem;
   font-weight: bold;
   color: #23d997;
+  cursor: pointer;
 `;
 
 const Nav: React.FC = () => {
   return (
     <StyledNav>
-      <h1>
-        <Logo>Capture</Logo>
-      </h1>
+      <Logo to="/about">Capture</Logo>
       <ul>
         <li>
-          <a href="#">About Us</a>
+          <Link to="/about">About Us</Link>
         </li>
         <li>
-          <a href="#">Our Work</a>
+          <Link to="/work">Our Work</Link>
         </li>
         <li>
-          <a href="#">Contact Us</a>
+          <Link to="/contact">Contact Us</Link>
         </li>
       </ul>
     </StyledNav>
