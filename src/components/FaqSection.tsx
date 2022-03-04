@@ -56,7 +56,7 @@ const FaqSection: React.FC = () => {
         <div className="faq-line"></div>
       </div>
       <div className="question">
-        <h4>Daily schedule</h4>
+        <h4>What's your daily schedule?</h4>
         <div className="answer">
           <p>Amet quam illum consequatur sed.</p>
           <p>
@@ -66,17 +66,7 @@ const FaqSection: React.FC = () => {
         <div className="faq-line"></div>
       </div>
       <div className="question">
-        <h4>Diferrent payment methods</h4>
-        <div className="answer">
-          <p>Amet quam illum consequatur sed.</p>
-          <p>
-            Lorem labore at ratione id consequuntur. Tempora fugit odio quis.
-          </p>
-        </div>
-        <div className="faq-line"></div>
-      </div>
-      <div className="question">
-        <h4>What products do you offer</h4>
+        <h4>What products do you offer?</h4>
         <div className="answer">
           <p>Amet quam illum consequatur sed.</p>
           <p>

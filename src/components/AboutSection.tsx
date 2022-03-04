@@ -16,7 +16,7 @@ const AboutSection: React.FC = () => {
             </h2>
           </Hide>
           <Hide>
-            <h2>true</h2>
+            <h2>true.</h2>
           </Hide>
         </div>
         <p>
