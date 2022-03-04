@@ -25,6 +25,7 @@ const GlobalStyle = createGlobalStyle`
     background: transparent;
     color: white;
     transition: all 0.3s ease;
+
     &:hover {
       background: #23d997;
     }
