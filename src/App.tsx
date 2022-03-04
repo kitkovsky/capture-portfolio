@@ -3,6 +3,7 @@ import About from "./pages/About";
 import Nav from "./components/Nav";
 import Work from "./pages/Work";
 import Contact from "./pages/Contact";
+import MovieDetail from "./pages/MovieDetail";
 import { Routes, Route, Navigate } from "react-router-dom";
 
 function App() {
@@ -11,9 +12,10 @@ function App() {
       <GlobalStyle />
       <Nav />
       <Routes>
-        <Route path="/" element={<Navigate to="/about"/>}></Route>
+        <Route path="/" element={<Navigate to="/about" />}></Route>
         <Route path="/about" element={<About />}></Route>
         <Route path="/work" element={<Work />}></Route>
+        <Route path="/work/:id" element={<MovieDetail />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
       </Routes>
     </div>
