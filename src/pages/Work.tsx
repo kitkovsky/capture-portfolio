@@ -4,8 +4,10 @@ import { Link } from "react-router-dom";
 import athlete from "../img/athlete-small.png";
 import theRacer from "../img/theracer-small.png";
 import goodTimes from "../img/goodtimes-small.png";
+import { motion } from "framer-motion";
+import { pageAnimation } from "../global/animations";
 
-const StyledWork = styled.div`
+const StyledWork = styled(motion.div)`
   min-height: 100vh;
   overflow: hidden;
   padding: 5rem 10rem;
@@ -30,14 +32,20 @@ const Movie = styled.div`
     object-fit: cover;
   }
 
-h2 {
-  color: white;
-}
+  h2 {
+    color: white;
+  }
 `;
 
 const Work: React.FC = () => {
   return (
-    <StyledWork>
+    <StyledWork
+      variants={pageAnimation}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      style={{ background: "#fff" }}
+    >
       <Movie>
         <h2>The Athlete</h2>
         <div className="line"></div>

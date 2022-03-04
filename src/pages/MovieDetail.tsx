@@ -3,13 +3,15 @@ import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 import getMovies from "../global/getMovies";
 import IMovie from "../global/movie.interface";
+import { motion } from "framer-motion";
+import { pageAnimation } from "../global/animations";
 
 interface AwardProps {
   title: string;
   description: string;
 }
 
-const Details = styled.div`
+const Details = styled(motion.div)`
   color: white;
 `;
 
@@ -92,7 +94,7 @@ const MovieDetail: React.FC = () => {
   return (
     <>
       {movie && (
-        <Details>
+        <Details variants={pageAnimation} initial="initial" animate="animate" exit="exit">
           <Headline>
             <h2>{movie?.title}</h2>
             <img src={movie?.mainImgUrl} alt="movie" />
