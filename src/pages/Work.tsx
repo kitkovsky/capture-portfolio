@@ -29,6 +29,10 @@ const Movie = styled.div`
     height: 70vh;
     object-fit: cover;
   }
+
+h2 {
+  color: white;
+}
 `;
 
 const Work: React.FC = () => {
@@ -37,21 +41,21 @@ const Work: React.FC = () => {
       <Movie>
         <h2>The Athlete</h2>
         <div className="line"></div>
-        <Link to="/">
+        <Link to="/work/the-athlete">
           <img src={athlete} alt="athlete" />
         </Link>
       </Movie>
       <Movie>
         <h2>The Racer</h2>
         <div className="line"></div>
-        <Link to="/">
+        <Link to="/work/the-racer">
           <img src={theRacer} alt="the racer" />
         </Link>
       </Movie>
       <Movie>
         <h2>Good Times</h2>
         <div className="line"></div>
-        <Link to="/">
+        <Link to="/work/good-times">
           <img src={goodTimes} alt="good times" />
         </Link>
       </Movie>
