@@ -13,6 +13,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     background: rgb(20, 20, 20);
+    font-family: 'Inter', sans-serif;
   }
 
   button {
