@@ -31,6 +31,10 @@ export const Image = styled.div`
     height: 80vh;
     object-fit: cover;
   }
+
+  @media screen and (max-width: 850px) {
+    display: none;
+  }
 `;
 
 export const Hide = styled.div`
