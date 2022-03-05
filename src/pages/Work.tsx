@@ -13,6 +13,7 @@ import {
   sliderAnimation,
   sliderContainerAnimation,
 } from "../global/animations";
+import { UseScroll } from "../components/UseScroll";
 
 const StyledWork = styled(motion.div)`
   min-height: 100vh;
@@ -21,10 +22,11 @@ const StyledWork = styled(motion.div)`
 
   h2 {
     padding: 1.5re, 0rem;
+    color: white;
   }
 `;
 
-const Movie = styled.div`
+const Movie = styled(motion.div)`
   padding-bottom: 10rem;
 
   .line {
@@ -67,13 +69,15 @@ const Frame4 = styled(Frame1)`
 `;
 
 const Work: React.FC = () => {
+  const [element, controls] = UseScroll();
+  const [element2, controls2] = UseScroll();
   return (
     <StyledWork
       variants={pageAnimation}
       initial="initial"
       animate="animate"
       exit="exit"
-      style={{ background: "#fff" }}
+      // style={{ background: "#fff" }}
     >
       <motion.div variants={sliderContainerAnimation}>
         <Frame1 variants={sliderAnimation}></Frame1>
@@ -90,14 +94,14 @@ const Work: React.FC = () => {
           </Hide>
         </Link>
       </Movie>
-      <Movie>
+      <Movie ref={element} variants={fadeAnimation} animate={controls}>
         <h2>The Racer</h2>
         <motion.div variants={lineAnimation} className="line"></motion.div>
         <Link to="/work/the-racer">
           <img src={theRacer} alt="the racer" />
         </Link>
       </Movie>
-      <Movie>
+      <Movie ref={element2} variants={fadeAnimation} animate={controls2}>
         <h2>Good Times</h2>
         <motion.div variants={lineAnimation} className="line"></motion.div>
         <Link to="/work/good-times">
