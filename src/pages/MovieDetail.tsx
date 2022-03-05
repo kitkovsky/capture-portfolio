@@ -49,27 +49,27 @@ const AwardStyle = styled.div`
     font-size: 2.5rem;
   }
 
-.line {
-  width: 100%;
-  background: #23d997;
-  height: 0.5rem;
-  margin: 1rem 0rem;
-}
+  .line {
+    width: 100%;
+    background: #23d997;
+    height: 0.5rem;
+    margin: 1rem 0rem;
+  }
 
-p {
-  padding: 2rem 0rem;
-}
+  p {
+    padding: 2rem 0rem;
+  }
 `;
 
 const ImageDisplay = styled.div`
   min-height: 50vh;
-  
+
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
-`
+`;
 
 const Award: React.FC<AwardProps> = ({ title, description }) => {
   return (
@@ -94,7 +94,12 @@ const MovieDetail: React.FC = () => {
   return (
     <>
       {movie && (
-        <Details variants={pageAnimation} initial="initial" animate="animate" exit="exit">
+        <Details
+          variants={pageAnimation}
+          initial="initial"
+          animate="animate"
+          exit="exit"
+        >
           <Headline>
             <h2>{movie?.title}</h2>
             <img src={movie?.mainImgUrl} alt="movie" />
@@ -108,9 +113,9 @@ const MovieDetail: React.FC = () => {
               />
             ))}
           </Awards>
-        <ImageDisplay>
-          <img src={movie.secondaryImgUrl} alt="" />
-        </ImageDisplay>
+          <ImageDisplay>
+            <img src={movie.secondaryImgUrl} alt="" />
+          </ImageDisplay>
         </Details>
       )}
     </>
