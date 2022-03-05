@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { About } from "../styles/Styles";
+import ToggleFaq from "./ToggleFaq";
+import { AnimateSharedLayout } from "framer-motion";
 
 const Faq = styled(About)`
   display: block;
@@ -45,36 +47,32 @@ const FaqSection: React.FC = () => {
       <h2>
         Any questions? <span>FAQ</span>
       </h2>
-      <div className="question">
-        <h4>How do I start?</h4>
-        <div className="answer">
-          <p>Amet quam illum consequatur sed.</p>
-          <p>
-            Lorem labore at ratione id consequuntur. Tempora fugit odio quis.
-          </p>
-        </div>
-        <div className="faq-line"></div>
-      </div>
-      <div className="question">
-        <h4>What's your daily schedule?</h4>
-        <div className="answer">
-          <p>Amet quam illum consequatur sed.</p>
-          <p>
-            Lorem labore at ratione id consequuntur. Tempora fugit odio quis.
-          </p>
-        </div>
-        <div className="faq-line"></div>
-      </div>
-      <div className="question">
-        <h4>What products do you offer?</h4>
-        <div className="answer">
-          <p>Amet quam illum consequatur sed.</p>
-          <p>
-            Lorem labore at ratione id consequuntur. Tempora fugit odio quis.
-          </p>
-        </div>
-        <div className="faq-line"></div>
-      </div>
+      <AnimateSharedLayout>
+        <ToggleFaq title="How do I start?">
+          <div className="answer">
+            <p>Amet quam illum consequatur sed.</p>
+            <p>
+              Lorem labore at ratione id consequuntur. Tempora fugit odio quis.
+            </p>
+          </div>
+        </ToggleFaq>
+        <ToggleFaq title="What's your daily schedule?">
+          <div className="answer">
+            <p>Amet quam illum consequatur sed.</p>
+            <p>
+              Lorem labore at ratione id consequuntur. Tempora fugit odio quis.
+            </p>
+          </div>
+        </ToggleFaq>
+        <ToggleFaq title="What products do you offer?">
+          <div className="answer">
+            <p>Amet quam illum consequatur sed.</p>
+            <p>
+              Lorem labore at ratione id consequuntur. Tempora fugit odio quis.
+            </p>
+          </div>
+        </ToggleFaq>
+      </AnimateSharedLayout>
     </Faq>
   );
 };
