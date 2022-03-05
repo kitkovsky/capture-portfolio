@@ -9,6 +9,10 @@ const StyledNav = styled.nav`
   justify-content: space-between;
   align-items: center;
   padding: 0rem 10rem;
+  position: sticky;
+  backdrop-filter: blur(20px);
+  top: 0;
+  z-index: 3;
 
   ul {
     display: flex;
