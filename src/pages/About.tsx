@@ -4,6 +4,7 @@ import ServicesSection from "../components/ServicesSection";
 import FaqSection from "../components/FaqSection";
 import { motion } from "framer-motion";
 import { fastPageAnimation } from "../global/animations";
+import ScrollTop from "../components/ScrollTop";
 
 const AboutUs: React.FC = () => {
   return (
@@ -16,6 +17,7 @@ const AboutUs: React.FC = () => {
       <AboutSection />
       <ServicesSection />
       <FaqSection />
+      <ScrollTop />
     </motion.div>
   );
 };
