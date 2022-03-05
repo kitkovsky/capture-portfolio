@@ -18,7 +18,6 @@ export const pageAnimation: Variants = {
 
   exit: {
     opacity: 0,
-    y: 300,
     transition: {
       duration: 0.5,
     },
@@ -48,7 +47,7 @@ export const fastPageAnimation: Variants = {
       duration: 0.5,
     },
   },
-}
+};
 
 export const titleAnimation: Variants = {
   initial: {
@@ -87,6 +86,49 @@ export const photoAnimation: Variants = {
     transition: {
       ease: "easeOut",
       duration: 0.75,
+    },
+  },
+};
+
+export const lineAnimation: Variants = {
+  initial: {
+    width: 0,
+  },
+
+  animate: {
+    width: "100%",
+    transition: {
+      duration: 0.75,
+    },
+  },
+};
+
+export const sliderAnimation: Variants = {
+  initial: {
+    x: "-130%",
+    skew: "45deg",
+  },
+
+  animate: {
+    x: "100%",
+    skew: "0deg",
+    transition: {
+      duration: 1,
+      ease: "easeOut",
+    },
+  },
+};
+
+export const sliderContainerAnimation: Variants = {
+  initial: {
+    opacity: 1,
+  },
+
+  animate: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      ease: "easeOut",
     },
   },
 };
