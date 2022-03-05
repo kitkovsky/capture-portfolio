@@ -6,6 +6,8 @@ import teamwork from "../img/teamwork.svg";
 import home2 from "../img/home2.png";
 import { About, Description, Image } from "../styles/Styles";
 import styled from "styled-components";
+import { UseScroll } from "./UseScroll";
+import { fadeAnimation } from "../global/animations";
 
 const Services = styled(About)`
   h2 {
@@ -39,8 +41,9 @@ const Card = styled.div`
 `;
 
 const ServicesSection: React.FC = () => {
+  const [element, controls] = UseScroll();
   return (
-    <Services>
+    <Services ref={element} variants={fadeAnimation} animate={controls}>
       <Description>
         <h2>
           High <span>quality</span> services.

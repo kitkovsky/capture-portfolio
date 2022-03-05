@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { About } from "../styles/Styles";
 import ToggleFaq from "./ToggleFaq";
 import { AnimateSharedLayout } from "framer-motion";
+import { UseScroll } from "./UseScroll";
+import { fadeAnimation } from "../global/animations";
 
 const Faq = styled(About)`
   display: block;
@@ -42,8 +44,9 @@ const Faq = styled(About)`
 `;
 
 const FaqSection: React.FC = () => {
+  const [element, controls] = UseScroll();
   return (
-    <Faq>
+    <Faq variants={fadeAnimation} ref={element} animate={controls}>
       <h2>
         Any questions? <span>FAQ</span>
       </h2>
