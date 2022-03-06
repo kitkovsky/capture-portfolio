@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars, faX } from "@fortawesome/free-solid-svg-icons";
 
 const StyledNav = styled.nav`
   min-height: 10vh;
@@ -28,6 +30,42 @@ const StyledNav = styled.nav`
     a {
       color: white;
       text-decoration: none;
+    }
+  }
+
+  ul.show {
+    background: rgb(20, 20, 20);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10rem 0rem;
+
+    li {
+      padding-left: 0;
+
+      a {
+        font-size: 5rem;
+      }
+
+      div {
+        height: 0.5rem;
+      }
+    }
+  }
+
+  button.show {
+    z-index: 4;
+  }
+
+  @media screen and (max-width: 850px) {
+    ul {
+      display: none;
     }
   }
 
@@ -60,14 +98,46 @@ const Line = styled(motion.div)`
   bottom: -20%;
 `;
 
+const HamburgerButton = styled.button`
+  display: none;
+  background-color: transparent;
+  border: 0;
+
+  &:hover {
+    background-color: transparent;
+  }
+
+  @media screen and (max-width: 850px) {
+    display: block;
+  }
+`;
+
 const Nav: React.FC = () => {
+  const [isNavOpen, setIsNavOpen] = useState(false);
   const { pathname } = useLocation();
+
+  const handleMobileNav = () => {
+    setIsNavOpen(!isNavOpen);
+  };
+
   return (
     <StyledNav>
       <Logo to="/about">Capture</Logo>
-      <ul>
+      <HamburgerButton
+        onClick={handleMobileNav}
+        id="hamburger-button"
+        className={isNavOpen ? "show" : ""}
+      >
+        <FontAwesomeIcon icon={isNavOpen ? faX : faBars} size="lg" />
+      </HamburgerButton>
+      <ul className={isNavOpen ? "show" : ""}>
         <li>
-          <Link to="/about">About Us</Link>
+          <Link
+            to="/about"
+            onClick={() => (isNavOpen ? setIsNavOpen(false) : "")}
+          >
+            About Us
+          </Link>
           <Line
             transition={{ duration: 0.75 }}
             initial={{ width: "0%" }}
@@ -75,7 +145,12 @@ const Nav: React.FC = () => {
           />
         </li>
         <li>
-          <Link to="/work">Our Work</Link>
+          <Link
+            to="/work"
+            onClick={() => (isNavOpen ? setIsNavOpen(false) : "")}
+          >
+            Our Work
+          </Link>
           <Line
             transition={{ duration: 0.75 }}
             initial={{ width: "0%" }}
@@ -83,7 +158,12 @@ const Nav: React.FC = () => {
           />
         </li>
         <li>
-          <Link to="/contact">Contact Us</Link>
+          <Link
+            to="/contact"
+            onClick={() => (isNavOpen ? setIsNavOpen(false) : "")}
+          >
+            Contact Us
+          </Link>
           <Line
             transition={{ duration: 0.75 }}
             initial={{ width: "0%" }}
