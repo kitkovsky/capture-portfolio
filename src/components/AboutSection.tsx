@@ -8,6 +8,7 @@ import {
   photoAnimation,
 } from "../global/animations";
 import Wave from "./Wave";
+import { Link } from "react-router-dom";
 
 const AboutSection: React.FC = () => {
   return (
@@ -30,7 +31,9 @@ const AboutSection: React.FC = () => {
           Contact us for any photography of videography ideas that you have. We
           have professionals ready to tackle your project.
         </motion.p>
-        <motion.button variants={fadeAnimation}>Contact us</motion.button>
+        <Link to="/contact">
+          <motion.button variants={fadeAnimation}>Contact us</motion.button>
+        </Link>
       </Description>
       <Image>
         <motion.img
@@ -40,7 +43,7 @@ const AboutSection: React.FC = () => {
           alt="man holding a camera"
         />
       </Image>
-    <Wave />
+      <Wave />
     </About>
   );
 };
