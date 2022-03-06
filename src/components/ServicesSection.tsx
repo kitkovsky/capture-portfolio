@@ -38,6 +38,16 @@ const Card = styled.div`
       padding: 1rem;
     }
   }
+
+  @media screen and (max-width: 550px) {
+    .icon img {
+      width: 4rem;
+    }
+
+    h3 {
+      font-size: 2rem;
+    }
+  }
 `;
 
 const ServicesSection: React.FC = () => {
@@ -80,7 +90,7 @@ const ServicesSection: React.FC = () => {
         </Cards>
       </Description>
       <Image>
-        <img src={home2} alt="camera on a tripod" />
+        <img className="main-img" src={home2} alt="camera on a tripod" />
       </Image>
     </Services>
   );

@@ -34,6 +34,7 @@ const AboutSection: React.FC = () => {
       </Description>
       <Image>
         <motion.img
+          className="main-img"
           variants={photoAnimation}
           src={home1}
           alt="man holding a camera"

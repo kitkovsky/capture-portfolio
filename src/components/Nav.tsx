@@ -30,6 +30,19 @@ const StyledNav = styled.nav`
       text-decoration: none;
     }
   }
+
+  @media screen and (max-width: 750px) {
+    padding: 0rem 5rem;
+  }
+
+  @media screen and (max-width: 550px) {
+    padding: 0rem 3rem;
+  }
+
+  @media screen and (min-width: 1920px) {
+    max-width: 1920px;
+    padding: 0 auto;
+  }
 `;
 
 const Logo = styled(Link)`

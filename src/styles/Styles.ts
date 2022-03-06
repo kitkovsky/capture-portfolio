@@ -9,6 +9,34 @@ export const About = styled(motion.div)`
   padding: 5rem 10rem;
   color: white;
   background: rgb(20, 20, 20);
+
+  @media screen and (max-width: 890px) {
+    flex-direction: column;
+  }
+
+  @media screen and (max-width: 750px) {
+    padding: 4rem 5rem;
+  }
+
+  @media screen and (max-width: 550px) {
+    min-height: 50vh;
+    padding: 4rem 3rem;
+
+    .main-img {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 460px) {
+    h2 {
+      font-size: 5rem;
+    }
+  }
+
+  @media screen and (min-width: 1920px) {
+    max-width: 1920px;
+    margin: auto;
+  }
 `;
 
 export const Description = styled.div`
@@ -18,6 +46,10 @@ export const Description = styled.div`
 
   h2 {
     font-weight: lighter;
+  }
+
+  @media screen and (max-width: 890px) {
+    padding-right: 0rem;
   }
 `;
 
@@ -30,10 +62,11 @@ export const Image = styled.div`
     width: 100%;
     height: 80vh;
     object-fit: cover;
-  }
 
-  @media screen and (max-width: 850px) {
-    display: none;
+    @media screen and (max-width: 890px) {
+      margin-top: 4rem;
+      width: 100%;
+    }
   }
 `;
 

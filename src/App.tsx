@@ -10,7 +10,7 @@ import { AnimatePresence } from "framer-motion";
 function App() {
   const location = useLocation();
   return (
-    <div className="App">
+    <div style={{alignItems: "center"}} className="App">
       <GlobalStyle />
       <Nav />
       <AnimatePresence exitBeforeEnter>
