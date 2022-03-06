@@ -29,6 +29,14 @@ const StyledWork = styled(motion.div)`
     max-width: 1920px;
     margin: auto;
   }
+
+  @media screen and (max-width: 750px) {
+    padding: 5rem 5rem;
+  }
+
+  @media screen and (max-width: 550px) {
+    padding: 5rem 3rem;
+  }
 `;
 
 const Movie = styled(motion.div)`
@@ -42,8 +50,20 @@ const Movie = styled(motion.div)`
 
   img {
     width: 100%;
-    height: 70vh;
+    height: 60vh;
     object-fit: cover;
+  }
+
+  @media screen and (max-width: 900px) {
+    img {
+      height: 40vh;
+    }
+  }
+
+  @media screen and (max-width: 550px) {
+    img {
+      height: 20vh;
+    }
   }
 `;
 
@@ -75,14 +95,12 @@ const Frame4 = styled(Frame1)`
 
 const Work: React.FC = () => {
   const [element, controls] = UseScroll();
-  const [element2, controls2] = UseScroll();
   return (
     <StyledWork
       variants={pageAnimation}
       initial="initial"
       animate="animate"
       exit="exit"
-      // style={{ background: "#fff" }}
     >
       <motion.div variants={sliderContainerAnimation}>
         <Frame1 variants={sliderAnimation}></Frame1>
@@ -99,14 +117,14 @@ const Work: React.FC = () => {
           </Hide>
         </Link>
       </Movie>
-      <Movie ref={element} variants={fadeAnimation} animate={controls}>
+      <Movie ref={element} variants={fadeAnimation}>
         <h2>The Racer</h2>
         <motion.div variants={lineAnimation} className="line"></motion.div>
         <Link to="/work/the-racer">
           <img src={theRacer} alt="the racer" />
         </Link>
       </Movie>
-      <Movie ref={element2} variants={fadeAnimation} animate={controls2}>
+      <Movie ref={element} variants={fadeAnimation} animate={controls}>
         <h2>Good Times</h2>
         <motion.div variants={lineAnimation} className="line"></motion.div>
         <Link to="/work/good-times">

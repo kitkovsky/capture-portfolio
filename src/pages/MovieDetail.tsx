@@ -21,15 +21,14 @@ const Details = styled(motion.div)`
 `;
 
 const Headline = styled.div`
-  min-height: 90vh;
-  padding-top: 20vh;
+  min-height: 70vh;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   h2 {
     position: absolute;
-    top: 10%;
-    left: 50%;
-    transform: translate(-50%, -10%);
   }
 
   img {
@@ -37,18 +36,54 @@ const Headline = styled.div`
     height: 70vh;
     object-fit: cover;
   }
+
+  @media screen and (max-width: 900px) {
+    min-height: 50vh;
+
+    img {
+      height: 50vh;
+    }
+  }
+
+  @media screen and (max-width: 750px) {
+    min-height: 30vh;
+
+    img {
+      height: 30vh;
+    }
+  }
+
+  @media screen and (max-width: 450px) {
+    min-height: 15vh;
+
+    img {
+      height: 15vh;
+    }
+  }
 `;
 
 const Awards = styled.div`
-  min-height: 80vh;
+  min-height: 30vh;
   display: flex;
   margin: 5rem 10rem;
   align-items: center;
   justify-content: space-around;
+
+  @media screen and (max-width: 750px) {
+    margin: 5rem 5rem;
+  }
+
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+  }
+
+  @media screen and (max-width: 550px) {
+    margin: 5rem 3rem;
+  }
 `;
 
 const AwardStyle = styled.div`
-  padding: 5rem;
+  padding: 2.5rem;
 
   h3 {
     font-size: 2.5rem;
@@ -64,6 +99,10 @@ const AwardStyle = styled.div`
   p {
     padding: 2rem 0rem;
   }
+
+  @media screen and (max-width: 550px) {
+    padding: 2.5rem 0rem;
+  }
 `;
 
 const ImageDisplay = styled.div`
@@ -73,6 +112,18 @@ const ImageDisplay = styled.div`
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+
+  @media screen and (max-width: 900px) {
+    min-height: 40vh;
+  }
+
+  @media screen and (max-width: 650px) {
+    min-height: 30vh;
+  }
+
+  @media screen and (max-width: 450px) {
+    min-height: 20vh;
   }
 `;
 
