@@ -24,6 +24,11 @@ const StyledWork = styled(motion.div)`
     padding: 1.5re, 0rem;
     color: white;
   }
+
+  @media screen and (min-width: 1920px) {
+    max-width: 1920px;
+    margin: auto;
+  }
 `;
 
 const Movie = styled(motion.div)`

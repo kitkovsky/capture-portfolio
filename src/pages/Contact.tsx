@@ -11,6 +11,11 @@ const StyledContact = styled(motion.div)`
   h2 {
     color: white;
   }
+
+  @media screen and (min-width: 1920px) {
+    max-width: 1920px;
+    margin: auto;
+  }
 `;
 
 const Title = styled.div`

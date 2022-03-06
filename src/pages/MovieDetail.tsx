@@ -13,6 +13,11 @@ interface AwardProps {
 
 const Details = styled(motion.div)`
   color: white;
+
+  @media screen and (min-width: 1920px) {
+    max-width: 1920px;
+    margin: auto;
+  }
 `;
 
 const Headline = styled.div`
