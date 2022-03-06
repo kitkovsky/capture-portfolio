@@ -117,6 +117,8 @@ const Nav: React.FC = () => {
   const { pathname } = useLocation();
 
   const handleMobileNav = () => {
+    const body = document.querySelector("body") as HTMLBodyElement;
+    body.classList.toggle("no-scroll");
     setIsNavOpen(!isNavOpen);
   };
 

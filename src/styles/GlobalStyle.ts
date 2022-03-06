@@ -62,6 +62,11 @@ const GlobalStyle = createGlobalStyle`
     line-height: 150%;
   }
 
+  .no-scroll {
+    height: 100%;
+    overflow-y: hidden;
+  }
+
   @media screen and (max-width: 1400px) {
     html {
       font-size: 50%;
