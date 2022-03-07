@@ -160,7 +160,9 @@ const Nav: React.FC = () => {
           <Line
             transition={{ duration: 0.75 }}
             initial={{ width: "0%" }}
-            animate={{ width: pathname === "/work" ? "40%" : "" }}
+            animate={{
+              width: pathname.includes("/work") ? "40%" : "",
+            }}
           />
         </li>
         <li>
