@@ -110,10 +110,14 @@ const Contact: React.FC = () => {
             <Circle></Circle>
             <SocialMedia>
               <div>
-                <a href="https://twitter.com" target="_blank">
+                <a href="https://twitter.com" target="_blank" rel="noreferrer">
                   <FontAwesomeIcon icon={faTwitter} />
                 </a>
-                <a href="https://instagram.com" target="_blank">
+                <a
+                  href="https://instagram.com"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <FontAwesomeIcon icon={faInstagram} />
                 </a>
               </div>
