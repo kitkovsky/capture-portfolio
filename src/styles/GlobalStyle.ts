@@ -9,11 +9,13 @@ const GlobalStyle = createGlobalStyle`
 
   html {
     font-size: 62.5%;
+    overflow-x: hidden;
   }
 
   body {
     background: rgb(20, 20, 20);
     font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
   }
 
   button {

@@ -120,7 +120,10 @@ const Nav: React.FC = () => {
 
   const handleMobileNav = () => {
     const body = document.querySelector("body") as HTMLBodyElement;
+    const html = document.querySelector("html") as HTMLElement;
     body.classList.toggle("no-scroll");
+    html.classList.toggle("no-scroll");
+    
     setIsNavOpen(!isNavOpen);
   };
 
@@ -138,7 +141,7 @@ const Nav: React.FC = () => {
         <li>
           <Link
             to="/about"
-            onClick={() => (isNavOpen ? setIsNavOpen(false) : "")}
+            onClick={handleMobileNav}
           >
             About Us
           </Link>
@@ -151,7 +154,7 @@ const Nav: React.FC = () => {
         <li>
           <Link
             to="/work"
-            onClick={() => (isNavOpen ? setIsNavOpen(false) : "")}
+            onClick={handleMobileNav}
           >
             Our Work
           </Link>
@@ -164,7 +167,7 @@ const Nav: React.FC = () => {
         <li>
           <Link
             to="/contact"
-            onClick={() => (isNavOpen ? setIsNavOpen(false) : "")}
+            onClick={handleMobileNav}
           >
             Contact Us
           </Link>
