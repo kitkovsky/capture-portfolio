@@ -117,14 +117,19 @@ const HamburgerButton = styled.button`
 const Nav: React.FC = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const { pathname } = useLocation();
+  const body = document.querySelector("body") as HTMLBodyElement;
+  const html = document.querySelector("html") as HTMLElement;
 
   const handleMobileNav = () => {
-    const body = document.querySelector("body") as HTMLBodyElement;
-    const html = document.querySelector("html") as HTMLElement;
+    setIsNavOpen(!isNavOpen);
     body.classList.toggle("no-scroll");
     html.classList.toggle("no-scroll");
-    
-    setIsNavOpen(!isNavOpen);
+  };
+
+  const handleClosingMobileNav = () => {
+    body.classList.remove("no-scroll");
+    html.classList.remove("no-scroll");
+    setIsNavOpen(false);
   };
 
   return (
@@ -139,10 +144,7 @@ const Nav: React.FC = () => {
       </HamburgerButton>
       <ul className={isNavOpen ? "show" : ""}>
         <li>
-          <Link
-            to="/about"
-            onClick={handleMobileNav}
-          >
+          <Link to="/about" onClick={handleClosingMobileNav}>
             About Us
           </Link>
           <Line
@@ -152,10 +154,7 @@ const Nav: React.FC = () => {
           />
         </li>
         <li>
-          <Link
-            to="/work"
-            onClick={handleMobileNav}
-          >
+          <Link to="/work" onClick={handleClosingMobileNav}>
             Our Work
           </Link>
           <Line
@@ -165,10 +164,7 @@ const Nav: React.FC = () => {
           />
         </li>
         <li>
-          <Link
-            to="/contact"
-            onClick={handleMobileNav}
-          >
+          <Link to="/contact" onClick={handleClosingMobileNav}>
             Contact Us
           </Link>
           <Line
