@@ -2,19 +2,46 @@ import React from "react";
 import { motion } from "framer-motion";
 import { pageAnimation, titleAnimation } from "../global/animations";
 import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faInstagram, faTwitter } from "@fortawesome/free-brands-svg-icons";
 
 const StyledContact = styled(motion.div)`
   padding: 5rem 10rem;
   color: #353535;
   min-height: 90vh;
 
-  h2 {
+  h2,
+  a {
     color: white;
+    font-size: 6rem;
   }
 
   @media screen and (min-width: 1920px) {
     max-width: 1920px;
     margin: auto;
+  }
+
+  @media screen and (max-width: 750px) {
+    padding: 5rem 5rem;
+
+    h2,
+    a {
+      font-size: 4rem;
+    }
+  }
+
+  @media screen and (max-width: 550px) {
+    padding: 5rem 3rem;
+
+    a {
+      font-size: 3rem;
+    }
+  }
+
+  @media screen and (max-width: 350px) {
+    a {
+      font-size: 2.5rem;
+    }
   }
 `;
 
@@ -30,9 +57,18 @@ const Hide = styled.div`
 const Social = styled(motion.div)`
   display: flex;
   align-items: center;
+  margin: 2rem 0rem;
 
-  h2 {
+  h2,
+  a {
     margin: 2rem;
+  }
+
+  svg {
+    font-size: 5rem;
+    color: white;
+    padding: 0rem 2rem;
+    cursor: pointer;
   }
 `;
 
@@ -41,6 +77,12 @@ const Circle = styled.div`
   width: 3rem;
   height: 3rem;
   background-color: palegreen;
+`;
+
+const SocialMedia = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 `;
 
 const Contact: React.FC = () => {
@@ -60,19 +102,22 @@ const Contact: React.FC = () => {
         <Hide>
           <Social variants={titleAnimation}>
             <Circle></Circle>
-            <h2>Send us a message.</h2>
+            <a href="mailto:contact@capture.com">contact@capture.com</a>
           </Social>
         </Hide>
         <Hide>
           <Social variants={titleAnimation}>
             <Circle></Circle>
-            <h2>Send an email.</h2>
-          </Social>
-        </Hide>
-        <Hide>
-          <Social variants={titleAnimation}>
-            <Circle></Circle>
-            <h2>Our social media.</h2>
+            <SocialMedia>
+              <div>
+                <a href="https://twitter.com" target="_blank">
+                  <FontAwesomeIcon icon={faTwitter} />
+                </a>
+                <a href="https://instagram.com" target="_blank">
+                  <FontAwesomeIcon icon={faInstagram} />
+                </a>
+              </div>
+            </SocialMedia>
           </Social>
         </Hide>
       </div>
