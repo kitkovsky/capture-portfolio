@@ -34,29 +34,7 @@ const StyledNav = styled.nav`
   }
 
   ul.show {
-    background: rgb(20, 20, 20);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    padding: 10rem 0rem;
-
-    li {
-      padding-left: 0;
-
-      a {
-        font-size: 5rem;
-      }
-
-      div {
-        height: 0.5rem;
-      }
-    }
+    transform: translateX(0%);
   }
 
   button.show {
@@ -65,7 +43,31 @@ const StyledNav = styled.nav`
 
   @media screen and (max-width: 850px) {
     ul {
-      display: none;
+      transition: all 0.7s cubic-bezier(0.33, 1, 0.68, 1);
+      transform: translateX(100%);
+      background: rgb(20, 20, 20);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      padding: 10rem 0rem;
+
+      li {
+        padding-left: 0;
+
+        a {
+          font-size: 5rem;
+        }
+
+        div {
+          height: 0.5rem;
+        }
+      }
     }
   }
 
